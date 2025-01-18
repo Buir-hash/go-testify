@@ -43,3 +43,7 @@ func mainHandle(w http.ResponseWriter, req *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(answer))
 }
+func main() {
+	http.HandleFunc("/cafe", mainHandle)
+	http.ListenAndServe(":8080", nil)
+}
